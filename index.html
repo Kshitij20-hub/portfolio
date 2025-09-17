@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kshitij Pandey - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e40af;
+        }
+        
+        /* About Section */
+        .about {
+            background: #f8fafc;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            margin: 0 auto;
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .experience-item h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-item .company {
+            font-weight: 600;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-item .duration {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background: #f8fafc;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-card h3 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .skill-category h3 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 0.5rem 0;
+            color: #4b5563;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .contact-item {
+            padding: 1.5rem;
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1>Kshitij Pandey</h1>
+                <p>Operations & Supply Chain Management Professional</p>
+                <p>📍 Oxford, United Kingdom</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="profile-img">👨‍💼</div>
+                <div>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                        Operations and Supply Chain professional with AI-aware continuous improvement mindset. 
+                        Proven experience in process optimization, stakeholder communication, and customer-facing 
+                        roles across automotive and retail sectors.
+                    </p>
+                    <h3 style="color: #1e40af; margin-bottom: 1rem;">Key Achievements</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;">🎓 MSc Advanced Engineering Management (Merit) - Leeds Beckett University</li>
+                        <li style="margin-bottom: 0.5rem;">📈 25% efficiency improvement through Kaizen implementation</li>
+                        <li style="margin-bottom: 0.5rem;">📊 18% order fulfillment rate improvement</li>
+                        <li style="margin-bottom: 0.5rem;">🚀 6+ major projects across automotive and supply chain sectors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Trading Assistant</h3>
+                <div class="company">Sainsbury's Supermarkets</div>
+                <div class="duration">Aug 2024 - Present | Oxford, UK</div>
+                <ul>
+                    <li>Enhanced customer service delivery resulting in 10% sales increase</li>
+                    <li>Optimized product displays and inventory management</li>
+                    <li>Managed financial transactions and promotional activities</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Supply Chain Associate</h3>
+                <div class="company">Case New Holland (CNH)</div>
+                <div class="duration">Jan 2022 - Nov 2022 | Noida, India</div>
+                <ul>
+                    <li>Reduced lead times by 10% through supply planning optimization</li>
+                    <li>Improved order fulfillment rate by 18%</li>
+                    <li>Enhanced parts availability using Excel/Power BI analytics</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Production Assistant Intern</h3>
+                <div class="company">Volvo Eicher Commercial Vehicles</div>
+                <div class="duration">Jan 2021 - Dec 2021 | Bhopal, India</div>
+                <ul>
+                    <li>Implemented 5S and Kaizen practices achieving 25% efficiency improvement</li>
+                    <li>Reduced waste by 12% through barcode-based inventory tracking</li>
+                    <li>Supported quality audits and root cause analysis initiatives</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Key Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>🏎️ SAE BAJA - All-Terrain Vehicle</h3>
+                    <p><strong>Role:</strong> Team Head - Powertrain/Brakes/Drivetrain</p>
+                    <p>Led cross-functional team in designing and testing competition-ready all-terrain vehicle. Managed project timeline and technical execution.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>🤖 AI Impact on Supply Chain</h3>
+                    <p><strong>Role:</strong> MSc Dissertation Research</p>
+                    <p>Comprehensive research on AI's role in accelerating supply chain innovation through data analytics and logistics optimization.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>📊 CNH Supply Chain Optimization</h3>
+                    <p><strong>Role:</strong> Supply Chain Associate</p>
+                    <p>Streamlined inbound processes using Excel and Power BI, achieving significant improvements in lead times and fulfillment rates.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>⚙️ Volvo Eicher Process Improvement</h3>
+                    <p><strong>Role:</strong> Production Assistant</p>
+                    <p>Implemented lean manufacturing principles including 5S and Kaizen practices on JIT assembly lines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>⚙️ Operations & CI</h3>
+                    <ul>
+                        <li>Kaizen Implementation</li>
+                        <li>5S Methodology</li>
+                        <li>Six Sigma Basics</li>
+                        <li>KPI Tracking</li>
+                        <li>Process Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>💻 Tools & Technology</h3>
+                    <ul>
+                        <li>Microsoft Excel (Advanced)</li>
+                        <li>Power BI</li>
+                        <li>CAD Software</li>
+                        <li>CRM Systems</li>
+                        <li>Inventory Management</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>📋 Methods & Frameworks</h3>
+                    <ul>
+                        <li>Just-In-Time (JIT)</li>
+                        <li>Lean Manufacturing</li>
+                        <li>Supply Planning</li>
+                        <li>Quality Control</li>
+                        <li>Project Coordination</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>👥 Leadership</h3>
+                    <ul>
+                        <li>Team Management</li>
+                        <li>Stakeholder Communication</li>
+                        <li>Cross-functional Collaboration</li>
+                        <li>Training & Mentoring</li>
+                        <li>Process Training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Contact Me</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:kshitijpandeybpl@gmail.com" style="color: white;">kshitijpandeybpl@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>📱 Phone</h3>
+                    <p><a href="tel:+447768942057" style="color: white;">+44 7768 942057</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>💼 GitHub</h3>
+                    <p><a href="https://github.com/Kshitij20-hub" target="_blank" style="color: white;">@Kshitij20-hub</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>Oxford, United Kingdom</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kshitij Pandey. All rights reserved.</p>
+            <p>Operations & Supply Chain Management Professional</p>
+        </div>
+    </footer>
+</body>
+</html>
