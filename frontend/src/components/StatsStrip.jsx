@@ -36,7 +36,7 @@ const media = `
 
 export default function StatsStrip() {
   return (
-    <section style={wrap}>
+    <section id="stats" style={wrap}>
       <style>{media}</style>
       <div style={{ ...container }} className="stats-grid">
         <div style={card}>
