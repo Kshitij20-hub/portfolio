@@ -348,3 +348,15 @@ export const SkillsSection = () => {
     </section>
   );
 };
+// ---- Page wrapper that composes the sections ----
+const PortfolioSections = () => {
+  return (
+    <>
+      <ExperienceSection />
+      <ProjectsSection />
+      <SkillsSection />
+    </>
+  );
+};
+
+export default PortfolioSections;
