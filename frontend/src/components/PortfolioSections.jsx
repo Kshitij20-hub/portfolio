@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroHeader from './HeroHeader';
+import StatsStrip from './StatsStrip';
 import { Calendar, Award, TrendingUp, Github, ExternalLink, Star, MapPin } from 'lucide-react';
 
 // Experience Section Component
@@ -354,6 +355,7 @@ const PortfolioSections = () => {
   return (
     <>
       <HeroHeader />
+      <StatsStrip />
       <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
