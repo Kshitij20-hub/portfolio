@@ -6,7 +6,9 @@ const wrap = {
   background: 'linear-gradient(180deg,#f3f6fb 0%, #ffffff 100%)',
   padding: '28px 16px 36px',
   borderRadius: '12px',
-  minHeight: '78vh'
+  minHeight: '88vh',       // was 78vh
+  display: 'grid',
+  alignItems: 'center'     // vertically center content within the hero
 };
 const container = {
   maxWidth: 1100,
@@ -200,8 +202,11 @@ export default function HeroHeader() {
         </div>
           {/* Centered down arrow to next section */}
           <div style={{ display: 'grid', placeItems: 'center', marginTop: 18 }}>
-            <a
-              href="#/stats"
+            <button
+              onClick={() => {
+                const el = document.getElementById('stats');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
               title="Scroll to statistics"
               style={{
                 width: 56,
