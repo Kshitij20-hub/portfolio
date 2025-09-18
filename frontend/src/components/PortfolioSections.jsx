@@ -1,4 +1,5 @@
 import React from 'react';
+import HeroHeader from './HeroHeader';
 import { Calendar, Award, TrendingUp, Github, ExternalLink, Star, MapPin } from 'lucide-react';
 
 // Experience Section Component
@@ -352,6 +353,7 @@ export const SkillsSection = () => {
 const PortfolioSections = () => {
   return (
     <>
+      <HeroHeader />
       <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
