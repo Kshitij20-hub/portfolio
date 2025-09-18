@@ -102,61 +102,102 @@ const media = `
 
 export default function HeroHeader() {
   return (
-    <section style={wrap}>
-      <style>{media}</style>
-      <div style={{ ...container }} className="hero-grid">
-        {/* LEFT */}
-        <div>
-          <span style={pill}>
-            <MapPin size={16} /> Oxford, United Kingdom
-          </span>
-
-          <h1 style={{ ...h1 }} className="hero-title">
-            Hey, there <span role="img" aria-label="waving hand">👋</span>
-            <br />
-            I&apos;m <span style={blueName}>Kshitij Pandey</span>
-          </h1>
-
-          <p style={sub}>
-            Operations &amp; Supply Chain Management | Process Improvement | AI-Aware Professional
-          </p>
-
-          <p style={body}>
-            Operations and Supply Chain specialist with an AI-aware continuous
-            improvement mindset. Experience across process optimisation,
-            stakeholder communication and customer-facing roles in automotive and retail.
-          </p>
-
-          <div style={row}>
-            <a href="mailto:kshitij.pandey@example.com" style={btn}>
-              Get in Touch
-            </a>
-            <a href="#/projects" style={btnGhost}>
-              View My Work <ExternalLink size={16} style={{ marginLeft: 6, verticalAlign: '-2px' }} />
-            </a>
-          </div>
-
-          <div style={iconRow}>
-            <a href="https://github.com/Kshitij20-hub" target="_blank" rel="noopener" style={iconBtn} title="GitHub">
-              <Github size={18} />
-            </a>
-            <a href="mailto:kshitij.pandey@example.com" style={iconBtn} title="Email">
-              <Mail size={18} />
-            </a>
+    <>
+      {/* --- Top Nav --- */}
+      <nav
+        style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 20,
+          backdropFilter: 'saturate(160%) blur(6px)',
+          background: 'rgba(255,255,255,0.85)',
+          borderBottom: '1px solid #e5e7eb',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1100,
+            margin: '0 auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '10px 16px',
+          }}
+        >
+          <div style={{ fontWeight: 800, color: '#274bdb' }}>KP</div>
+          <div
+            style={{
+              display: 'flex',
+              gap: 22,
+              flexWrap: 'wrap',
+              alignItems: 'center',
+            }}
+          >
+            <a href="#/about" style={{ color: '#1f2937', textDecoration: 'none' }}>About</a>
+            <a href="#/experience" style={{ color: '#1f2937', textDecoration: 'none' }}>Experience</a>
+            <a href="#/projects" style={{ color: '#1f2937', textDecoration: 'none' }}>Projects</a>
+            <a href="#/skills" style={{ color: '#1f2937', textDecoration: 'none' }}>Skills</a>
+            <a href="#/testimonials" style={{ color: '#1f2937', textDecoration: 'none' }}>Testimonials</a>
+            <a href="#/contact" style={{ color: '#1f2937', textDecoration: 'none' }}>Contact</a>
           </div>
         </div>
+      </nav>
 
-        {/* RIGHT */}
-        <div style={right}>
-          <div className="ring" style={ring}>
-            <div style={badge}>
-              <div style={{ fontSize: 64 }}>🧑‍💼</div>
-              <div style={badgeTitle}>Operations Expert</div>
-              <div style={badgeSub}>Supply Chain &amp; Process Improvement</div>
+      {/* --- Hero Section (existing) --- */}
+      <section style={wrap}>
+        <style>{media}</style>
+        <div style={{ ...container }} className="hero-grid">
+          {/* LEFT */}
+          <div>
+            <span style={pill}>
+              <MapPin size={16} /> Oxford, United Kingdom
+            </span>
+
+            <h1 style={{ ...h1 }} className="hero-title">
+              Hey, there <span role="img" aria-label="waving hand">👋</span>
+              <br />
+              I&apos;m <span style={blueName}>Kshitij Pandey</span>
+            </h1>
+
+            <p style={sub}>
+              Operations &amp; Supply Chain Management | Process Improvement | AI-Aware Professional
+            </p>
+
+            <p style={body}>
+              Operations and Supply Chain specialist with an AI-aware continuous
+              improvement mindset. Experience across process optimisation,
+              stakeholder communication and customer-facing roles in automotive and retail.
+            </p>
+
+            <div style={row}>
+              <a href="#/contact" style={btn}>Get in Touch</a>
+              <a href="#/projects" style={btnGhost}>
+                View My Work <ExternalLink size={16} style={{ marginLeft: 6, verticalAlign: '-2px' }} />
+              </a>
+            </div>
+
+            <div style={iconRow}>
+              <a href="https://github.com/Kshitij20-hub" target="_blank" rel="noopener" style={iconBtn} title="GitHub">
+                <Github size={18} />
+              </a>
+              <a href="mailto:kshitij.pandey@example.com" style={iconBtn} title="Email">
+                <Mail size={18} />
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT */}
+          <div style={right}>
+            <div className="ring" style={ring}>
+              <div style={badge}>
+                <div style={{ fontSize: 64 }}>🧑‍💼</div>
+                <div style={badgeTitle}>Operations Expert</div>
+                <div style={badgeSub}>Supply Chain &amp; Process Improvement</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
