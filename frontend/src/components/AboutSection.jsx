@@ -2,7 +2,11 @@ import React from 'react';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <section
+      id="about"
+      className="py-20 bg-gradient-to-b from-blue-50 to-white"
+      style={{ scrollMarginTop: '110px' }}   // add this
+    >
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl lg:text-5xl font-light text-gray-900 text-center mb-4">
           About Me
