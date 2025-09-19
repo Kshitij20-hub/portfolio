@@ -203,6 +203,7 @@ export default function HeroHeader() {
           {/* Centered down arrow to next section */}
           <div style={{ display: 'grid', placeItems: 'center', marginTop: 18 }}>
             <button
+              type="button"
               onClick={() => {
                 const el = document.getElementById('stats');
                 if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -216,13 +217,14 @@ export default function HeroHeader() {
                 color: '#3b82f6',
                 display: 'grid',
                 placeItems: 'center',
-                textDecoration: 'none',
                 background: '#ffffffaa',
-                boxShadow: '0 6px 18px rgba(39,75,219,0.12)'
+                boxShadow: '0 6px 18px rgba(39,75,219,0.12)',
+                cursor: 'pointer',
+                outline: 'none'
               }}
             >
-              ↓
-            </a>
+              <span style={{ fontSize: 22, lineHeight: '1' }}>↓</span>
+            </button>
           </div>
       </section>
     </>
