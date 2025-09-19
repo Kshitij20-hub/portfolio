@@ -1,3 +1,4 @@
+import AboutSection from './AboutSection';
 import React from 'react';
 import HeroHeader from './HeroHeader';
 import StatsStrip from './StatsStrip';
@@ -355,6 +356,7 @@ const PortfolioSections = () => {
   return (
     <>
       <HeroHeader />
+      <AboutSection />
       <StatsStrip />
       <ExperienceSection />
       <ProjectsSection />
