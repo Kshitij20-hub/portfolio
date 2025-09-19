@@ -6,9 +6,9 @@ const wrap = {
   background: 'linear-gradient(180deg,#f3f6fb 0%, #ffffff 100%)',
   padding: '28px 16px 36px',
   borderRadius: '12px',
-  minHeight: '88vh',       // was 78vh
+  minHeight: '100vh',      // full viewport height
   display: 'grid',
-  alignItems: 'center'     // vertically center content within the hero
+  alignItems: 'center'     // center the grid vertically
 };
 const container = {
   maxWidth: 1100,
@@ -16,7 +16,7 @@ const container = {
   display: 'grid',
   gridTemplateColumns: '1.2fr 1fr',
   gap: 28,
-  alignItems: 'center',
+  alignItems: 'center'     // <— ensure children (text + circle) are centered vertically
 };
 const pill = {
   display: 'inline-flex',
