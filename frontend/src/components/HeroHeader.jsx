@@ -2,6 +2,12 @@ import React from 'react';
 import { MapPin, Mail, Github, ExternalLink } from 'lucide-react';
 
 /* --- very small inline style system (keeps us to one file) --- */
+const scrollToId = (id, offset = 100) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const y = el.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top: y, behavior: 'smooth' });
+};
 const wrap = {
   background: 'linear-gradient(180deg,#f3f6fb 0%, #ffffff 100%)',
   padding: '28px 16px 36px',
@@ -136,7 +142,13 @@ export default function HeroHeader() {
               alignItems: 'center',
             }}
           >
-            <a href="#/about" style={{ color: '#1f2937', textDecoration: 'none' }}>About</a>
+            <a
+              href="#about"
+              onClick={(e) => { e.preventDefault(); scrollToId('about'); }}
+              style={{ color: '#1f2937', textDecoration: 'none' }}
+            >
+              About
+            </a>
             <a href="#/experience" style={{ color: '#1f2937', textDecoration: 'none' }}>Experience</a>
             <a href="#/projects" style={{ color: '#1f2937', textDecoration: 'none' }}>Projects</a>
             <a href="#/skills" style={{ color: '#1f2937', textDecoration: 'none' }}>Skills</a>
@@ -204,7 +216,7 @@ export default function HeroHeader() {
           <div style={{ display: 'grid', placeItems: 'center', marginTop: 18 }}>
             <button
               type="button"
-              onClick={() => {
+              onClick={() => scrollToId('about')}
                 const el = document.getElementById('stats');
                 if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
