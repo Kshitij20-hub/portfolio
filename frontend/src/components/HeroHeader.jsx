@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, Mail, Github, ExternalLink } from 'lucide-react';
 
 /* --- very small inline style system (keeps us to one file) --- */
-const scrollToId = (id, offset = 100) => {
+const scrollToId = (id, offset = 110) => {
   const el = document.getElementById(id);
   if (!el) return;
   const y = el.getBoundingClientRect().top + window.scrollY - offset;
@@ -217,10 +217,7 @@ export default function HeroHeader() {
             <button
               type="button"
               onClick={() => scrollToId('about')}
-                const el = document.getElementById('stats');
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-              title="Scroll to statistics"
+              title="Scroll to About"
               style={{
                 width: 56,
                 height: 56,
